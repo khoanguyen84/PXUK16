@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PXUK16.API", "PXUK16.API\PXUK16.API.csproj", "{F8A3419C-59B4-4897-8B2F-53C354A5D389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8A3419C-59B4-4897-8B2F-53C354A5D389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A3419C-59B4-4897-8B2F-53C354A5D389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A3419C-59B4-4897-8B2F-53C354A5D389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A3419C-59B4-4897-8B2F-53C354A5D389}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBA73D95-245E-48E8-9C0B-A06DDC3B8BC6}
+	EndGlobalSection
+EndGlobal
