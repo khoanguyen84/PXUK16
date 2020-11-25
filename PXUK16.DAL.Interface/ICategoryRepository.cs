@@ -10,4 +10,5 @@ namespace PXUK16.DAL.Interface
     {
         Task<IEnumerable<Category>> Gets();
     }
+
 }

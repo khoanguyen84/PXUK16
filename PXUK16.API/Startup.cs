@@ -27,7 +27,11 @@ namespace PXUK16.API
             services.AddSwaggerGen();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddScoped<IManafactoryService, ManafactoryService>();
+            services.AddScoped<IManafactoryRepository, ManafactoryRepository>();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
