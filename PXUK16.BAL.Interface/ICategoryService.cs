@@ -1,12 +1,11 @@
 ﻿using PXUK16.Domain.Response.Category;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PXUK16.DAL.Interface
+namespace PXUK16.BAL.Interface
 {
-    public interface ICategoryRepository
+    public interface ICategoryService
     {
         Task<IEnumerable<Category>> Gets();
     }
