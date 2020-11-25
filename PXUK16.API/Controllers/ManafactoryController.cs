@@ -9,20 +9,20 @@ using PXUK16.BAL.Interface;
 namespace PXUK16.API.Controllers
 {
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class ManafactoryController : ControllerBase
     {
-        private readonly ICategoryService categoryService;
+        private readonly IManafactoryService manafactoryService;
 
-        public CategoryController(ICategoryService categoryService)
+        public ManafactoryController(IManafactoryService manafactoryService)
         {
-            this.categoryService = categoryService;
+            this.manafactoryService = manafactoryService;
         }
         [HttpGet]
-        [Route("/api/category/gets")]
+        [Route("/api/manafactory/gets")]
         public async Task<OkObjectResult> Gets()
         {
-            return Ok(await categoryService.Gets());
+            return Ok(await manafactoryService.Gets());
         }
-       
+
     }
 }
