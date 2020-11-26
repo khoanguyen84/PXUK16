@@ -1,5 +1,6 @@
 ﻿using PXUK16.BAL.Interface;
 using PXUK16.DAL.Interface;
+using PXUK16.Domain.Request.Category;
 using PXUK16.Domain.Response.Category;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,12 @@ namespace PXUK16.BAL
         {
             this.categoryRepository = categoryRepository;
         }
+
+        public async Task<CreateCategoryResult> CreateCategory(CreateCategoryRequest request)
+        {
+            return await categoryRepository.CreateCategory(request);
+        }
+
         public async Task<IEnumerable<Category>> Gets()
         {
             return await categoryRepository.Gets();
