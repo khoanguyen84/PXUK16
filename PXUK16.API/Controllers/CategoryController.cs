@@ -18,6 +18,7 @@ namespace PXUK16.API.Controllers
         {
             this.categoryService = categoryService;
         }
+
         [HttpGet]
         [Route("/api/category/gets")]
         public async Task<OkObjectResult> Gets()
