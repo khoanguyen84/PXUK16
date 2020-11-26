@@ -1,6 +1,7 @@
 ﻿using PXUK16.BAL.Interface;
 using PXUK16.DAL.Interface;
-using PXUK16.Domain.Response.Category;
+using PXUK16.Domain.Request.Manufactory;
+using PXUK16.Domain.Response.Manufactory;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,6 +17,13 @@ namespace PXUK16.BAL
         {
             this.manufactoryRepository = manufactoryRepository;
         }
+
+        public async Task<CreateManufactoryResult> CreateManufactory(CreateManufactoryRequest request)
+        {
+            return await manufactoryRepository.CreateManufactory(request);
+            
+        }
+
         public async Task<IEnumerable<Manufactory>> Gets()
         {
             return await manufactoryRepository.Gets();

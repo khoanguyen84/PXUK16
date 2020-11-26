@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PXUK16.Domain.Response.Category
+namespace PXUK16.Domain.Request.Manufactory
 {
-    public class Manufactory
+    public class CreateManufactoryRequest
     {
-        public string ManufactoryId { get; set; }
         public string Name { get; set; }
     }
 }
