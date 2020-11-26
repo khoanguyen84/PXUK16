@@ -13,7 +13,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
--- Author:		Khoa Nguyen
+-- Author:		Tuan Le
 -- Create date: 25/11/2020
 -- Description:	Get categories have not deleted yet
 -- =============================================
