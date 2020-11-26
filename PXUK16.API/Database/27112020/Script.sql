@@ -1,12 +1,12 @@
 ﻿USE [PXUK16DB]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_CreateManufactory]    Script Date: 11/26/2020 11:48:16 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_CreateManufactory]    Script Date: 11/26/2020 6:08:08 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:		Ngọc Phước
+-- Author:		Lê Nhật
 -- Create date: 26/11/2020
 -- Description:	Create new Manufactory
 -- =============================================

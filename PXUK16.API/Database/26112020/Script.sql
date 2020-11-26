@@ -13,7 +13,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
--- Author:		Det
+-- Author:		Lê Nhật
 -- Create date: 25/11/2020
 -- Description:	Get manufactories have not deleted yet
 -- =============================================
