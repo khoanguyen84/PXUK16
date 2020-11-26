@@ -47,7 +47,7 @@ namespace PXUK16.API
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ngoc Phuoc API");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json","Ngoc Phuoc API");
             });
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseRouting();
