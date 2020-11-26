@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PXUK16.BAL.Interface;
+using PXUK16.Domain.Request.Manufactory;
 
 namespace PXUK16.API.Controllers
 {
@@ -21,6 +22,12 @@ namespace PXUK16.API.Controllers
         public async Task<OkObjectResult> Gets()
         {
             return Ok(await manufactoryService.Gets());
+        }
+        [HttpPost]
+        [Route("/api/manufactory/create")]
+        public async Task<OkObjectResult> Create(CreateManufactoryRequest request)
+        {
+            return Ok(await manufactoryService.CreateManufactory(request));
         }
     }
 }
