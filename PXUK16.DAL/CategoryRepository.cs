@@ -13,7 +13,7 @@ namespace PXUK16.DAL
     {
         public async Task<CreateCategoryResult> CreateCategory(CreateCategoryRequest request)
         {
-            try
+           try
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@CategoryName", request.CategoryName);
