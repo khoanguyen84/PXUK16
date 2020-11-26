@@ -26,5 +26,3 @@ BEGIN
 	  WHERE IsDeleted = 0
 END
 GO
-
-
