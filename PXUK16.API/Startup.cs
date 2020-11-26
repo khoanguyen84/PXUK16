@@ -20,7 +20,7 @@ namespace PXUK16.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+       
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -31,7 +31,7 @@ namespace PXUK16.API
             services.AddScoped<IManafactoryRepository, ManafactoryRepository>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+       
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -47,7 +47,7 @@ namespace PXUK16.API
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "PXU K16 API");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rôn API Demo");
             });
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseRouting();
