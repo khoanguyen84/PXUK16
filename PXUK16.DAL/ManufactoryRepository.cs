@@ -14,7 +14,7 @@ namespace PXUK16.DAL
         public async Task<IEnumerable<Manufactory>> Gets()
         {
             return await SqlMapper.QueryAsync<Manufactory>(cnn: connect,
-                                                sql: "sp_Manufactories",
+                                                sql: "sp_GetManufactory",
                                                 commandType: CommandType.StoredProcedure);
         }
     }
