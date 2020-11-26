@@ -3,7 +3,14 @@
 -- Create date: 26/11/2020
 -- Description:	Create Manufactory
 -- =============================================
-CREATE PROCEDURE sp_CreateManufactory
+USE [PXUK16DB]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_CreateManufactory]    Script Date: 11/26/2020 8:05:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_CreateManufactory]
 	@ManufactoryName NVARCHAR(500)
 AS
 BEGIN
@@ -17,7 +24,7 @@ BEGIN
 		END
 		ELSE
 		BEGIN
-			IF(EXISTS(SELECT * FROM Manafactory WHERE @ManufactoryName = @ManufactoryName))
+			IF(EXISTS(SELECT * FROM Manafactory WHERE Name = @ManufactoryName))
 			BEGIN
 				SET @Message = 'Manufactory name is exists.'
 			END
@@ -42,4 +49,3 @@ BEGIN
 
 END
 GO
-
