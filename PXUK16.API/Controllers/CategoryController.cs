@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PXUK16.BAL.Interface;
+using PXUK16.Domain.Request.Category;
 
 namespace PXUK16.API.Controllers
 {
@@ -22,6 +23,13 @@ namespace PXUK16.API.Controllers
         public async Task<OkObjectResult> Gets()
         {
             return Ok(await categoryService.Gets());
+        }
+
+        [HttpPost]
+        [Route("/api/category/create")]
+        public async Task<OkObjectResult> Create(CreateCategoryRequest request)
+        {
+            return Ok(await categoryService.CreateCategory(request));
         }
     }
 }
