@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PXUK16.BAL.Interface;
+using PXUK16.Domain.Request.Manafactory;
 
 namespace PXUK16.API.Controllers
 {
@@ -22,6 +23,12 @@ namespace PXUK16.API.Controllers
         public async Task<OkObjectResult> Gets()
         {
             return Ok(await manafactoryService.Gets());
+        }
+        [HttpPost]
+        [Route("/api/manafactory/create")]
+        public async Task<OkObjectResult> Create(CreateManafactoryRequest request)
+        {
+            return Ok(await manafactoryService.CreateManafactory(request));
         }
     }
 }
