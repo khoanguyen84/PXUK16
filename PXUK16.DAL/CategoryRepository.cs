@@ -29,6 +29,8 @@ namespace PXUK16.DAL
             }
         }
 
+ 
+
         public async Task<IEnumerable<Category>> Gets()
         {
             //var sql = "SELECT CategoryId, CategoryName FROM [dbo].[Category] WHERE IsDeleted =0";

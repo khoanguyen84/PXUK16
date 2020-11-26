@@ -11,7 +11,7 @@ namespace PXUK16.DAL
         protected IDbConnection connect;
         public BaseRepository()
         {
-            connect = new SqlConnection(@"Data Source=DESKTOP-7UEPQID;Initial Catalog=PXUK16DB;User ID=sa;Password=123456789");
+            connect = new SqlConnection(@"Data Source=DESKTOP-9GIEK94\SQLEXPRESS;Initial Catalog=PXUK16DB;Persist Security Info=True;User ID=sa;Password=123456");
         }
     }
 }

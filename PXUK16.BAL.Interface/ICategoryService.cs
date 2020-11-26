@@ -9,6 +9,6 @@ namespace PXUK16.BAL.Interface
     public interface ICategoryService
     {
         Task<IEnumerable<Category>> Gets();
-        Task<CreateCategoryResult> CreateCategory(CreateCategoryRequest request);
+        Task<CreateCategoryResult> CreateCategory(CreateManufactoryRequest request);
     }
 }

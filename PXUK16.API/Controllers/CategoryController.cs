@@ -27,7 +27,7 @@ namespace PXUK16.API.Controllers
 
         [HttpPost]
         [Route("/api/category/create")]
-        public async Task<OkObjectResult> Create(CreateCategoryRequest request)
+        public async Task<OkObjectResult> Create(CreateManufactoryRequest request)
         {
             return Ok(await categoryService.CreateCategory(request));
         }

@@ -17,7 +17,7 @@ namespace PXUK16.BAL
             this.categoryRepository = categoryRepository;
         }
 
-        public async Task<CreateCategoryResult> CreateCategory(CreateCategoryRequest request)
+        public async Task<CreateCategoryResult> CreateCategory(CreateManufactoryRequest request)
         {
             return await categoryRepository.CreateCategory(request);
         }
