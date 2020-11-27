@@ -41,7 +41,7 @@ namespace PXUK16.DAL
                                                     param: parameters,
                                                     commandType: CommandType.StoredProcedure);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
