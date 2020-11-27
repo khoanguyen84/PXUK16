@@ -7,10 +7,11 @@ namespace PXUK16.Domain.Response.Update_Category
    public class UpdateCategoryResult
     {
         public int CategoryId { get; set; }
-        public int CategoryName { get; set; }
 
         public string Message { get; set; }
 
-       
+        public string Result { get; set; }
+
+
     }
 }
