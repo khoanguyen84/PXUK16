@@ -28,6 +28,26 @@ namespace PXUK16.DAL
                 throw;
             }
         }
+        
+        public async Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@CategoryId", request.CategoryId);
+                parameters.Add("@CategoryName", request.CategoryName);
+                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateCategoryResult>(cnn: connect,
+                                                    sql: "sp_UpdateCategory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+        }
 
         public async Task<IEnumerable<Category>> Gets()
         {
@@ -37,5 +57,7 @@ namespace PXUK16.DAL
                                                 sql: "sp_GetCategories", 
                                                 commandType: CommandType.StoredProcedure);
         }
+
+        
     }
 }
