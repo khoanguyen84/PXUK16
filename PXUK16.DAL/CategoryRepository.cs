@@ -29,6 +29,25 @@ namespace PXUK16.DAL
             }
         }
 
+        public async Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@CategoryName", request.CategoryName);
+                parameters.Add("@CategoryId", request.CategoryId);
+                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateCategoryResult>(cnn: connect,
+                                                    sql: "sp_UpdateCategory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<Category>> Gets()
         {
             //var sql = "SELECT CategoryId, CategoryName FROM [dbo].[Category] WHERE IsDeleted =0";
