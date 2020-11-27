@@ -6,7 +6,7 @@ namespace PXUK16.Domain.Request.Category
 {
     public class UpdateCategoryRequest
     {
-        public string CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
     }
 }
