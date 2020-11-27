@@ -4,9 +4,9 @@ using System.Text;
 
 namespace PXUK16.Domain.Request.Category
 {
-    public class CreateCategoryRequest
+    public class UpdateCategoryRequest
     {
-       public int CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
     }
 }
