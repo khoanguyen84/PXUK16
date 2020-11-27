@@ -11,6 +11,13 @@ namespace PXUK16.DAL
 {
     public class CategoryRepository : BaseRepository, ICategoryRepository
     {
+        public async Task<IEnumerable<Category>> Gets()
+        {
+            return await SqlMapper.QueryAsync<Category>(cnn: connect,
+                                                sql: "sp_GetCategories",
+                                                commandType: CommandType.StoredProcedure);
+        }
+
         public async Task<CreateCategoryResult> CreateCategory(CreateCategoryRequest request)
         {
             try
@@ -29,13 +36,23 @@ namespace PXUK16.DAL
             }
         }
 
-        public async Task<IEnumerable<Category>> Gets()
+        public async Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request)
         {
-            //var sql = "SELECT CategoryId, CategoryName FROM [dbo].[Category] WHERE IsDeleted =0";
-            //return await SqlMapper.QueryAsync<Category>(cnn: connect, sql: sql, commandType: CommandType.Text);
-            return await SqlMapper.QueryAsync<Category>(cnn: connect, 
-                                                sql: "sp_GetCategories", 
-                                                commandType: CommandType.StoredProcedure);
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@CategoryName", request.CategoryName);
+                parameters.Add("@CategoryId", request.CategoryId);
+                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateCategoryResult>(cnn: connect,
+                                                    sql: "sp_UpdateCategory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }
