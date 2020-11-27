@@ -22,6 +22,12 @@ namespace PXUK16.BAL
             return await categoryRepository.CreateCategory(request);
         }
 
+        
+
+        public async Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request)
+        {
+            return await categoryRepository.UpdateCategory(request);
+        }
         public async Task<IEnumerable<Category>> Gets()
         {
             return await categoryRepository.Gets();
