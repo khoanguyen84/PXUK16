@@ -1,7 +1,9 @@
 ﻿using Dapper;
 using PXUK16.DAL.Interface;
 using PXUK16.Domain.Request.Category;
+using PXUK16.Domain.Request.Update;
 using PXUK16.Domain.Response.Category;
+using PXUK16.Domain.Response.Update;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -36,6 +38,27 @@ namespace PXUK16.DAL
             return await SqlMapper.QueryAsync<Category>(cnn: connect, 
                                                 sql: "sp_GetCategories", 
                                                 commandType: CommandType.StoredProcedure);
+        }
+
+  
+
+        public async Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@CategoryName", request.CategoryName);
+                parameters.Add("@CategoryId", request.CategoryId);
+                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateCategoryResult>(cnn: connect,
+                                                    sql: "sp_UpdateCategory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
