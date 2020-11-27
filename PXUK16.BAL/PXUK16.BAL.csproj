@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PXUK16.BAL.Interface\PXUK16.BAL.Interface.csproj" />
+    <ProjectReference Include="..\PXUK16.DAL.Interface\PXUK16.DAL.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

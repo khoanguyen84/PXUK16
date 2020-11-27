@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "PXUK16.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/PXUK16.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PXUK16.Domain.dll": {}
+        }
       }
     }
   },
@@ -172,11 +182,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "PXUK16.Domain/1.0.0": {
+      "type": "project",
+      "path": "../PXUK16.Domain/PXUK16.Domain.csproj",
+      "msbuildProject": "../PXUK16.Domain/PXUK16.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "PXUK16.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -185,11 +201,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MSI\\Source\\Repos\\PXUK16\\PXUK16.BAL.Interface\\PXUK16.BAL.Interface.csproj",
+      "projectUniqueName": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.BAL.Interface\\PXUK16.BAL.Interface.csproj",
       "projectName": "PXUK16.BAL.Interface",
-      "projectPath": "C:\\Users\\MSI\\Source\\Repos\\PXUK16\\PXUK16.BAL.Interface\\PXUK16.BAL.Interface.csproj",
+      "projectPath": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.BAL.Interface\\PXUK16.BAL.Interface.csproj",
       "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MSI\\Source\\Repos\\PXUK16\\PXUK16.BAL.Interface\\obj\\",
+      "outputPath": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.BAL.Interface\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -204,7 +220,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.Domain\\PXUK16.Domain.csproj": {
+              "projectPath": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.Domain\\PXUK16.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

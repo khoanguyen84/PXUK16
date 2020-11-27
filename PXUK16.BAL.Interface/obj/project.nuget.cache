@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/7qQKCAHKoqSAx+vFm+MUSpAByUrKcYr79BzgcBhmJvsPBOZ7qHjvF4GamZShJY/+eVnUQ2jEH9z6qHn8Eealg==",
+  "dgSpecHash": "nJaZOoltWpIyes+xGIC5QGCknsDxFX+E3Lu7vmgRHIA3w6Oblryv2yNtjMMf9wtBgqyrD8JKX7f+UxObUaZdEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MSI\\Source\\Repos\\PXUK16\\PXUK16.BAL.Interface\\PXUK16.BAL.Interface.csproj",
+  "projectFilePath": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.BAL.Interface\\PXUK16.BAL.Interface.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

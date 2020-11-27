@@ -25,6 +25,42 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "PXUK16.BAL.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "PXUK16.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PXUK16.BAL.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PXUK16.BAL.Interface.dll": {}
+        }
+      },
+      "PXUK16.DAL.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "PXUK16.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PXUK16.DAL.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PXUK16.DAL.Interface.dll": {}
+        }
+      },
+      "PXUK16.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/PXUK16.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PXUK16.Domain.dll": {}
+        }
       }
     }
   },
@@ -172,11 +208,28 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "PXUK16.BAL.Interface/1.0.0": {
+      "type": "project",
+      "path": "../PXUK16.BAL.Interface/PXUK16.BAL.Interface.csproj",
+      "msbuildProject": "../PXUK16.BAL.Interface/PXUK16.BAL.Interface.csproj"
+    },
+    "PXUK16.DAL.Interface/1.0.0": {
+      "type": "project",
+      "path": "../PXUK16.DAL.Interface/PXUK16.DAL.Interface.csproj",
+      "msbuildProject": "../PXUK16.DAL.Interface/PXUK16.DAL.Interface.csproj"
+    },
+    "PXUK16.Domain/1.0.0": {
+      "type": "project",
+      "path": "../PXUK16.Domain/PXUK16.Domain.csproj",
+      "msbuildProject": "../PXUK16.Domain/PXUK16.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "PXUK16.BAL.Interface >= 1.0.0",
+      "PXUK16.DAL.Interface >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -185,11 +238,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MSI\\Source\\Repos\\PXUK16\\PXUK16.BAL\\PXUK16.BAL.csproj",
+      "projectUniqueName": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.BAL\\PXUK16.BAL.csproj",
       "projectName": "PXUK16.BAL",
-      "projectPath": "C:\\Users\\MSI\\Source\\Repos\\PXUK16\\PXUK16.BAL\\PXUK16.BAL.csproj",
+      "projectPath": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.BAL\\PXUK16.BAL.csproj",
       "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MSI\\Source\\Repos\\PXUK16\\PXUK16.BAL\\obj\\",
+      "outputPath": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.BAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -204,7 +257,14 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.BAL.Interface\\PXUK16.BAL.Interface.csproj": {
+              "projectPath": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.BAL.Interface\\PXUK16.BAL.Interface.csproj"
+            },
+            "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.DAL.Interface\\PXUK16.DAL.Interface.csproj": {
+              "projectPath": "C:\\Users\\MSI\\source\\repos\\PXUK16\\PXUK16.DAL.Interface\\PXUK16.DAL.Interface.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

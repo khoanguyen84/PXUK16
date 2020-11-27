@@ -46,31 +46,13 @@ namespace PXUK16.DAL
                 throw;
             }
         }
-        public async Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request)
-        {
-            try
-            {
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@CategoryId", request.CategoryId);
-                parameters.Add("@CategoryName", request.CategoryName);
-                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateCategoryResult>(cnn: connect,
-                                                    sql: "sp_UpdateCategory",
-                                                    param: parameters,
-                                                    commandType: CommandType.StoredProcedure);
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-        }
 
         public async Task<IEnumerable<Category>> Gets()
         {
             //var sql = "SELECT CategoryId, CategoryName FROM [dbo].[Category] WHERE IsDeleted =0";
             //return await SqlMapper.QueryAsync<Category>(cnn: connect, sql: sql, commandType: CommandType.Text);
-            return await SqlMapper.QueryAsync<Category>(cnn: connect,
-                                                sql: "sp_GetCategories",
+            return await SqlMapper.QueryAsync<Category>(cnn: connect, 
+                                                sql: "sp_GetCategories", 
                                                 commandType: CommandType.StoredProcedure);
         }
     }
