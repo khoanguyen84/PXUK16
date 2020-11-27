@@ -55,11 +55,11 @@ BEGIN
 				END
 			END
 		END
-		SELECT @Result AS Result, @Message AS [Message]
+		SELECT @Result AS Result, @Message AS [Message], @CategoryId AS CategoryId
 		COMMIT TRAN
 	END TRY
 	BEGIN CATCH
-		SELECT @Result AS Result, @Message AS [Message]
+		SELECT @Result AS Result, @Message AS [Message], @CategoryId AS CategoryId
 		ROLLBACK TRAN
 	END CATCH
 END
