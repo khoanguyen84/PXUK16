@@ -18,7 +18,25 @@ namespace PXUK16.DAL
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@CategoryName", request.CategoryName);
                 return await SqlMapper.QueryFirstOrDefaultAsync<CreateCategoryResult>(cnn: connect,
-                                                    sql: "sp_CreateCategory",
+                                                    sql: "sp_UpdateCategory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        public async Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@CategoryId", request.CategoryId);
+                parameters.Add("@CategoryName", request.CategoryName);
+                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateCategoryResult>(cnn: connect,
+                                                    sql: "sp_UpdateCategory",
                                                     param: parameters,
                                                     commandType: CommandType.StoredProcedure);
             }
@@ -33,8 +51,8 @@ namespace PXUK16.DAL
         {
             //var sql = "SELECT CategoryId, CategoryName FROM [dbo].[Category] WHERE IsDeleted =0";
             //return await SqlMapper.QueryAsync<Category>(cnn: connect, sql: sql, commandType: CommandType.Text);
-            return await SqlMapper.QueryAsync<Category>(cnn: connect, 
-                                                sql: "sp_GetCategories", 
+            return await SqlMapper.QueryAsync<Category>(cnn: connect,
+                                                sql: "sp_GetCategories",
                                                 commandType: CommandType.StoredProcedure);
         }
     }
