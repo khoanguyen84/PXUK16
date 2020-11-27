@@ -12,6 +12,9 @@ namespace PXUK16.DAL.Interface
         Task<IEnumerable<Category>> Gets();
 
         Task<CreateCategoryResult> CreateCategory(CreateCategoryRequest request);
+
+        Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request);
+
     }
 
 }

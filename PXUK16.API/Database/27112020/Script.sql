@@ -1,50 +1,63 @@
-﻿USE [PXUK16DB]
-GO
-/****** Object:  StoredProcedure [dbo].[sp_CreateManafactory]    Script Date: 26/11/2020 2:06:06 CH ******/
-SET ANSI_NULLS ON
+﻿SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
 -- Author:		Trung Ho
--- Create date: 26/11/2020
--- Description:	Create new manafactory
+-- Create date: 27/11/2020
+-- Description:	Update category
 -- =============================================
-CREATE PROCEDURE [dbo].[sp_CreateManafactory]
-	@Name NVARCHAR(500)
+CREATE PROCEDURE sp_UpdateCategory
+	@CategoryId		INT,
+	@CategoryName	NVARCHAR(500)
 AS
 BEGIN
-	DECLARE @ManufactoryId	INT = 0,
-			@Message	NVARCHAR(200) = 'Something went wrong, please contact administrator.'
+	
+	DECLARE @Message	NVARCHAR(200) = 'Something went wrong, please contact administrator.'
+	DECLARE @Result		BIT = 0
 
+	BEGIN TRAN
 	BEGIN TRY
-		IF(@Name IS NULL OR @Name = '')
+		IF(ISNULL(@CategoryId,0) = 0)
 		BEGIN
-			SET @Message = 'Manafactory name is required.'
+			SET @Message = 'CategoryId is required.'
 		END
 		ELSE
 		BEGIN
-			IF(EXISTS(SELECT * FROM Manafactory WHERE Name = @Name))
+			IF(ISNULL(@CategoryName, '') = '')
 			BEGIN
-				SET @Message = 'Manafactory name is exists.'
+				SET @Message = 'Category name is required.'
 			END
 			ELSE
 			BEGIN
-				INSERT INTO [dbo].[Manafactory]
-					   ([Name]
-					   ,[IsDeleted])
-				 VALUES
-					   (@Name
-					   ,0)
+				IF(NOT EXISTS(SELECT * FROM Category WHERE CategoryId = @CategoryId))
+				BEGIN
+					SET @Message = 'Can not found category Id'	
+				END
+				ELSE
+				BEGIN
+					IF(EXISTS(SELECT * FROM Category WHERE CategoryName = @CategoryName AND CategoryId <> @CategoryId))
+					BEGIN
+						SET @Message = 'Category is exists'	
+					END
+					ELSE
+					BEGIN
+						UPDATE Category
+						SET CategoryName = @CategoryName
+						WHERE CategoryId = @CategoryId
 
-				SET @ManufactoryId = SCOPE_IDENTITY()
-				SET @Message = 'Manafactory has been created success.'
+						SET @Message = 'Category has been updated success'
+						SET @Result = 1
+					END
+				END
 			END
 		END
-		SELECT @ManufactoryId AS ManufactoryId, @Message AS [Message]
+		SELECT @Result AS Result, @Message AS [Message]
+		COMMIT TRAN
 	END TRY
 	BEGIN CATCH
-		SELECT @ManufactoryId AS ManufactoryId, @Message AS [Message]
+		SELECT @Result AS Result, @Message AS [Message]
+		ROLLBACK TRAN
 	END CATCH
 END
 GO
