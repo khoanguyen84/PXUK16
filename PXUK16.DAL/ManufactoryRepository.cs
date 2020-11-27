@@ -17,7 +17,7 @@ namespace PXUK16.DAL
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@ManufactoryName", request.Name);
+                parameters.Add("@Name", request.Name);
                 return await SqlMapper.QueryFirstOrDefaultAsync<CreateManufactoryResult>(cnn: connect,
                                                     sql: "sp_CreateManufactory",
                                                     param: parameters,
