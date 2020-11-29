@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PXUK16.Domain\PXUK16.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

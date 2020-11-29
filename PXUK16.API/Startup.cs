@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PXUK16.BAL;
+using PXUK16.BAL.Interface;
+using PXUK16.DAL;
+using PXUK16.DAL.Interface;
 
 namespace PXUK16.API
 {
@@ -21,6 +25,10 @@ namespace PXUK16.API
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IManufactoryService, ManufactoryService>();
+            services.AddScoped<IManufactoryRepository, ManufactoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
