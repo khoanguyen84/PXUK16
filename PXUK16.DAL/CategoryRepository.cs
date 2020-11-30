@@ -54,5 +54,10 @@ namespace PXUK16.DAL
                 throw;
             }
         }
+
+        IEnumerable<Category> ICategoryRepository.Gets()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

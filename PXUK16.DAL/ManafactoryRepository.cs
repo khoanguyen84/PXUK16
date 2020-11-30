@@ -16,7 +16,7 @@ namespace PXUK16.DAL
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@ManufactoryName", request.Name);
+                parameters.Add("@Name", request.Name);
                 return await SqlMapper.QueryFirstOrDefaultAsync<CreateManafactoryResult>(cnn: connect,
                                                     sql: "sp_CreateManufactory",
                                                     param: parameters,
@@ -32,7 +32,7 @@ namespace PXUK16.DAL
         public async Task<IEnumerable<Manafactory>> Gets()
         {
             return await SqlMapper.QueryAsync<Manafactory>(cnn: connect,
-                                                sql: "sp_GetManafactory",
+                                                sql: "sp_GetManufactory",
                                                 commandType: CommandType.StoredProcedure);
         }
 
@@ -41,8 +41,8 @@ namespace PXUK16.DAL
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@ManufactoryName", request.Name);
-                parameters.Add("@ManafactoryId", request.ManafactoryId);
+                parameters.Add("@Name", request.Name);
+                parameters.Add("@ManufactoryId", request.ManafactoryId);
                 return await SqlMapper.QueryFirstOrDefaultAsync<UpdateManafactoryResult>(cnn: connect,
                                                     sql: "sp_UpdateManufactory",
                                                     param: parameters,
