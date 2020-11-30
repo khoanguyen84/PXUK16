@@ -35,7 +35,7 @@ BEGIN
 					   ,0)
 
 				SET @CategoryId = SCOPE_IDENTITY()
-				SET @Message = 'Category has been created success.'
+				SET @Message = 'Manufatory has been created success.'
 			END
 		END
 		SELECT @CategoryId AS CategoryId, @Message AS [Message]
