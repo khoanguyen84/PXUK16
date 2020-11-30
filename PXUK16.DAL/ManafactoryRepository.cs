@@ -35,5 +35,24 @@ namespace PXUK16.DAL
                                                 sql: "sp_GetManafactory",
                                                 commandType: CommandType.StoredProcedure);
         }
+
+        public async Task<UpdateManafactoryResult> UpdateManafactory(UpdateManafactoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@ManufactoryName", request.Name);
+                parameters.Add("@ManafactoryId", request.ManafactoryId);
+                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateManafactoryResult>(cnn: connect,
+                                                    sql: "sp_UpdateManufactory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }
