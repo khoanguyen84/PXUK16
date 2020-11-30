@@ -11,5 +11,7 @@ namespace PXUK16.DAL.Interface
     {
         Task<IEnumerable<Manufactory>> Gets();
         Task<CreateManufactoryResult> CreateManufactory(CreateManufactoryRequest request);
+        Task<UpdateManufactoryResult> UpdateManufactory(UpdateManufactoryRequest request);
+
     }
 }
