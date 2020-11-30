@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using PXUK16.Domain.Request.Category;
+using PXUK16.Domain.Request.Manafactory;
 
 namespace PXUK16.DAL.Interface
 {
@@ -12,5 +13,7 @@ namespace PXUK16.DAL.Interface
         Task<IEnumerable<Manufactory>> Gets();
 
         Task<CreateManufactoryResult> CreateManufactory(CreateManufactoryRequest request);
+
+        Task<UpdateManufactoryResult> UpdateManufactory(UpdateManufactoryRequest request);
     }
 }

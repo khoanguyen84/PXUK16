@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PXUK16.BAL.Interface;
 using PXUK16.Domain.Request.Category;
+using PXUK16.Domain.Request.Manafactory;
 
 namespace PXUK16.API.Controllers
 {
@@ -31,6 +32,13 @@ namespace PXUK16.API.Controllers
         public async Task<OkObjectResult> Create(CreateManufactoryRequest request)
         {
             return Ok(await manufactoryService.CreateManufactory(request));
+        }
+
+        [HttpPost]
+        [Route("/api/manufactory/Update")]
+        public async Task<OkObjectResult> Update(UpdateManufactoryRequest request)
+        {
+            return Ok(await manufactoryService.UpdateManufactory(request));
         }
     }
 }

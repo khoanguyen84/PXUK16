@@ -28,7 +28,7 @@ namespace PXUK16.API
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IManufactoryService, ManufactoryService>();
-            services.AddScoped<IManufactoryRepository, ManufactoryRepository>();
+            services.AddScoped<IManufactoryRepository, ManafactoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

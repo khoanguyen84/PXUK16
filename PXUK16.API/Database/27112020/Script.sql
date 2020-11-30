@@ -3,51 +3,61 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:		Ron
--- Create date: 26/11/2020
--- Description:	Create new Manufactory
+-- Author:		Khoa Nguyễn
+-- Create date: 27/11/2020
+-- Description:	Update category
 -- =============================================
-CREATE PROCEDURE sp_CreateManufactory
-	@ManufactoryName NVARCHAR(500)
+CREATE PROCEDURE sp_UpdateCategory
+	@CategoryId		INT,
+	@CategoryName	NVARCHAR(500)
 AS
 BEGIN
-	DECLARE @ManufactoryId	INT = 0,
-			@Message	NVARCHAR(200) = 'Something went wrong, please contact administrator.'
+	
+	DECLARE @Message	NVARCHAR(200) = 'Something went wrong, please contact administrator.'
+	DECLARE @Result		BIT = 0
 
+	BEGIN TRAN
 	BEGIN TRY
-		IF(@ManufactoryName IS NULL OR @ManufactoryName = '')
+		IF(ISNULL(@CategoryId,0) = 0)
 		BEGIN
-			SET @Message = 'Manufactory name is required.'
+			SET @Message = 'CategoryId is required.'
 		END
 		ELSE
 		BEGIN
-			IF(EXISTS(SELECT * FROM Manafactory WHERE @ManufactoryName = @ManufactoryName))
+			IF(ISNULL(@CategoryName, '') = '')
 			BEGIN
-				SET @Message = 'Manufactory name is exists.'
+				SET @Message = 'Category name is required.'
 			END
 			ELSE
 			BEGIN
-				INSERT INTO [dbo].[Manafactory]
-                            ([Name]
-                            ,[IsDeleted])
-				 VALUES
-					   (@ManufactoryName
-					   ,0)
+				IF(NOT EXISTS(SELECT * FROM Category WHERE CategoryId = @CategoryId))
+				BEGIN
+					SET @Message = 'Can not found category Id'	
+				END
+				ELSE
+				BEGIN
+					IF(EXISTS(SELECT * FROM Category WHERE CategoryName = @CategoryName AND CategoryId <> @CategoryId))
+					BEGIN
+						SET @Message = 'Category is exists'	
+					END
+					ELSE
+					BEGIN
+						UPDATE Category
+						SET CategoryName = @CategoryName
+						WHERE CategoryId = @CategoryId
 
-				SET @ManufactoryId = SCOPE_IDENTITY()
-				SET @Message = 'Manufactory has been created success.'
+						SET @Message = 'Category has been updated success'
+						SET @Result = 1
+					END
+				END
 			END
 		END
-		SELECT @ManufactoryId AS ManufactoryId, @Message AS [Message]
+		SELECT @Result AS Result, @Message AS [Message]
+		COMMIT TRAN
 	END TRY
 	BEGIN CATCH
-		SELECT @ManufactoryId AS ManufactoryId, @Message AS [Message]
+		SELECT @Result AS Result, @Message AS [Message]
+		ROLLBACK TRAN
 	END CATCH
 END
 GO
-
-USE [PXUK16DB]
-GO
-
-
-
