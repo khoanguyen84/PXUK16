@@ -31,6 +31,24 @@ namespace PXUK16.DAL
                 throw;
             }
         }
+        public async Task<UpdateManufactoryResult> UpdateManufactory(UpdateManufactoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@ManufactoryId", request.ManufactoryId);
+                parameters.Add("@ManuFactoryName", request.Name);
+                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateManufactoryResult>(cnn: connect,
+                                                    sql: "sp_UpdateManufactory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
 
         public async Task<IEnumerable<Manufactory>> Gets()
         {

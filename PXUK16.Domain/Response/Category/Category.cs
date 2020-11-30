@@ -8,5 +8,6 @@ namespace PXUK16.Domain.Response.Category
     {
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+       
     }
 }
