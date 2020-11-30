@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PXUK16.BAL.Interface;
 using PXUK16.Domain.Request.Category;
+using PXUK16.Domain.Request.Update_Category;
 
 namespace PXUK16.API.Controllers
 {
@@ -33,8 +34,8 @@ namespace PXUK16.API.Controllers
         }
 
         [HttpPost]
-        [Route("/api/category/Update")]
-        public async Task<OkObjectResult> Update(UpdateCategoryRequest request)
+        [Route("/api/category/update")]
+        public async Task<OkObjectResult> Update(Domain.Request.Category.UpdateCategoryRequest request)
         {
             return Ok(await categoryService.UpdateCategory(request));
         }
