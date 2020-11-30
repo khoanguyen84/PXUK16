@@ -44,7 +44,7 @@ namespace PXUK16.DAL
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@CategoryId", request.CategoryId);
-                parameters.Add("@CategoryName",  request.CategoryName);
+                parameters.Add("@CategoryName", request.CategoryName) ;
                 return await SqlMapper.QueryFirstOrDefaultAsync<UpdateCategoryResult>(cnn: connect,
                                                     sql: "sp_UpdateCategory",
                                                     param: parameters,
