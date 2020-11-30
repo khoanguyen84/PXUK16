@@ -24,7 +24,7 @@ namespace PXUK16.DAL
                                                     param: parameters,
                                                     commandType: CommandType.StoredProcedure);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -40,15 +40,14 @@ namespace PXUK16.DAL
                                                 commandType: CommandType.StoredProcedure);
         }
 
-  
-
         public async Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@CategoryName", request.CategoryName);
                 parameters.Add("@CategoryId", request.CategoryId);
+                parameters.Add("@CategoryName", request.CategoryName);
+
                 return await SqlMapper.QueryFirstOrDefaultAsync<UpdateCategoryResult>(cnn: connect,
                                                     sql: "sp_UpdateCategory",
                                                     param: parameters,

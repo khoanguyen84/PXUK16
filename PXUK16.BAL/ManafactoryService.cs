@@ -24,5 +24,10 @@ namespace PXUK16.BAL
         {
             return await manafactoryRepository.Gets();
         }
+
+        public async Task<UpdateManafactoryResult> UpdateManafactory(UpdateManafactoryRequest request)
+        {
+            return await manafactoryRepository.UpdateManafactory(request);
+        }
     }
 }

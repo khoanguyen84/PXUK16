@@ -31,5 +31,12 @@ namespace PXUK16.API.Controllers
         {
             return Ok(await manafactoryService.CreateManafactory(request));
         }
+
+        [HttpPost]
+        [Route("/api/Manufactory/update")]
+        public async Task<OkObjectResult> Update(UpdateManafactoryRequest request)
+        {
+            return Ok(await manafactoryService.UpdateManafactory(request));
+        }
     }
 }
