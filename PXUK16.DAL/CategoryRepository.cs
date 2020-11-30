@@ -57,5 +57,24 @@ namespace PXUK16.DAL
 
             }
         }
+
+        public async Task<DeleteCategoryResult> DeleteCategory(DeleteCategoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@CategoryId", request.CategoryId);
+                return await SqlMapper.QueryFirstOrDefaultAsync<DeleteCategoryResult>(cnn: connect,
+                                                    sql: "sp_DeleteCategory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

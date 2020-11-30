@@ -28,5 +28,10 @@ namespace PXUK16.BAL
         {
             return await manufactoryRepository.Gets();
         }
+
+        public async Task<UpdateManufactoryResult> UpdateManufactory(UpdateManufactoryRequest request)
+        {
+            return await manufactoryRepository.UpdateManufactory(request);
+        }
     }
 }
