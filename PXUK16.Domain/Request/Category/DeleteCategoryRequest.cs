@@ -6,6 +6,7 @@ namespace PXUK16.Domain.Request.Category
 {
     public class DeleteCategoryRequest
     {
-        public string CategoryId {get; set; }
+        public int CategoryId {get; set; }
+        
     }
 }

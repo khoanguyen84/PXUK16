@@ -32,6 +32,24 @@ namespace PXUK16.DAL
             }
         }
 
+        public async Task<DeleteManufactoryResult> DeleteManufactory(DeleteManufactoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@ManufactoryId", request.ManufactoryId);
+                return await SqlMapper.QueryFirstOrDefaultAsync<DeleteManufactoryResult>(cnn: connect,
+                                                    sql: "sp_DeleteManufactory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<Manufactory>> Gets()
         {
             return await SqlMapper.QueryAsync<Manufactory>(cnn: connect,
