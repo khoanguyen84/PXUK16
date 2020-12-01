@@ -14,5 +14,7 @@ namespace PXUK16.BAL.Interface
         Task<CreateManufactoryResult> CreateManufactory(CreateManufactoryRequest request);
 
         Task<UpdateManufactoryResult> UpdateManufactory(UpdateManufactoryRequest request);
+
+        Task<DeleteManufactoryResult> DeleteManufactory(DeleteManufactoryRequest request);
     }
 }

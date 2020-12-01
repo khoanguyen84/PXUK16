@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PXUK16.BAL.Interface;
 using PXUK16.Domain.Request.Category;
-using PXUK16.Domain.Request.Update_Category;
+using System.Threading.Tasks;
 
 namespace PXUK16.API.Controllers
 {
@@ -35,9 +30,16 @@ namespace PXUK16.API.Controllers
 
         [HttpPost]
         [Route("/api/category/update")]
-        public async Task<OkObjectResult> Update(Domain.Request.Category.UpdateCategoryRequest request)
+        public async Task<OkObjectResult> Update(UpdateCategoryRequest request)
         {
             return Ok(await categoryService.UpdateCategory(request));
+        }
+
+        [HttpPost]
+        [Route("/api/category/Delete")]
+        public async Task<OkObjectResult> Delete(DeleteCategoryRequest request)
+        {
+            return Ok(await categoryService.DeleteCategory(request));
         }
     }
 }
