@@ -18,6 +18,7 @@ namespace PXUK16.API.Controllers
         {
             this.manafactoryService = manafactoryService;
         }
+
         [HttpGet]
         [Route("/api/manafactory/gets")]
         public async Task<OkObjectResult> Gets()
