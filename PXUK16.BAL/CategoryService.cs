@@ -30,5 +30,9 @@ namespace PXUK16.BAL
         {
             return await categoryRepository.Gets();
         }
+        public async Task<DeleteCategoryResult> DeleteCategory(DeleteCategoryRequest request)
+        {
+            return await categoryRepository.DeleteCategory(request);
+        }
     }
 }
