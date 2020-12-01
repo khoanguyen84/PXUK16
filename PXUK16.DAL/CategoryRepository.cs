@@ -29,7 +29,7 @@ namespace PXUK16.DAL
                                                     param: parameters,
                                                     commandType: CommandType.StoredProcedure);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -48,16 +48,40 @@ namespace PXUK16.DAL
                                                     param: parameters,
                                                     commandType: CommandType.StoredProcedure);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
             }
         }
 
-        IEnumerable<Category> ICategoryRepository.Gets()
+       
+
+        public async Task<DeleteCategoryResult> DeleteCategory(DeleteCategoryRequest request)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@CategoryId", request.CategoryId);
+
+
+                return await SqlMapper.QueryFirstOrDefaultAsync<DeleteCategoryResult>(cnn: connect,
+                                                    sql: "sp_DeleteCategory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<IEnumerable<Category>> Gets()
+        {
+
+            return await SqlMapper.QueryAsync<Category>(cnn: connect,
+                                                sql: "sp_GetCategories",
+                                                commandType: CommandType.StoredProcedure);
         }
     }
 }

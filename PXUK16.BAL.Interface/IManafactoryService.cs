@@ -1,4 +1,5 @@
 ﻿using PXUK16.Domain.Request.Manafactory;
+using PXUK16.Domain.Response.Category;
 using PXUK16.Domain.Response.Manafactory;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,7 @@ namespace PXUK16.BAL.Interface
         Task<IEnumerable<Manafactory>> Gets();
         Task<CreateManafactoryResult> CreateManafactory(CreateManafactoryRequest request);
         Task<UpdateManafactoryResult> UpdateManafactory(UpdateManafactoryRequest request);
+        Task<DeleteManufactoryResult> DeleteManufactory(DeleteManufactoryRequest request);
+
     }
 }

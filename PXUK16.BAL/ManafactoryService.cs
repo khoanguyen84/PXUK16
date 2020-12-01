@@ -1,6 +1,7 @@
 ﻿using PXUK16.BAL.Interface;
 using PXUK16.DAL.Interface;
 using PXUK16.Domain.Request.Manafactory;
+using PXUK16.Domain.Response.Category;
 using PXUK16.Domain.Response.Manafactory;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace PXUK16.BAL
         }
 
         public async Task<CreateManafactoryResult> CreateManafactory(CreateManafactoryRequest request)
+        {
+            return await manafactoryRepository.CreateManafactory(request);
+        }
+
+        public async Task<DeleteManufactoryResult> DeleteManufactory(DeleteManufactoryRequest request)
         {
             return await manafactoryRepository.CreateManafactory(request);
         }

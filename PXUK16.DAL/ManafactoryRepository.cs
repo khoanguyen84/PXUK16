@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PXUK16.Domain.Response.Manafactory;
 using PXUK16.Domain.Request.Manafactory;
 using System;
+using PXUK16.Domain.Response.Category;
 
 namespace PXUK16.DAL
 {
@@ -53,6 +54,31 @@ namespace PXUK16.DAL
 
                 throw;
             }
+        }
+
+        public async Task<DeleteManufactoryResult> DeleteManufactory(DeleteManufactoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@ManufactoryId", request.ManufactoryId);
+
+
+                return await SqlMapper.QueryFirstOrDefaultAsync<DeleteManufactoryResult>(cnn: connect,
+                                                    sql: "sp_DeleteManufactories",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public Task<DeleteManufactoryResult> CreateManafactory(DeleteManufactoryRequest request)
+        {
+            throw new NotImplementedException();
         }
     }
 }
