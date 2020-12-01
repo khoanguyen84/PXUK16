@@ -13,6 +13,7 @@ namespace PXUK16.DAL.Interface
 
         Task<CreateCategoryResult> CreateCategory(CreateCategoryRequest request);
         Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request);
+        Task<DeleteCategoryResult> DeleteCategory(DeleteCategoryRequest request);
 
     }
 }
