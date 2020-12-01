@@ -22,14 +22,19 @@ namespace PXUK16.BAL
             return await manafactoryRepository.CreateManafactory(request);
         }
 
-        public async Task<IEnumerable<Manafactory>> Gets()
-        {
-            return await manafactoryRepository.Gets();
-        }
-
         public async Task<UpdateManafactoryResult> UpdateManafactory(UpdateManafactoryRequest request)
         {
             return await manafactoryRepository.UpdateManafactory(request);
+        }
+
+        public async Task<DeleteManafactoryResult> DeleteManafactory(DeleteManafactoryRequest request)
+        {
+            return await manafactoryRepository.DeleteManafactory(request);
+        }
+
+        public async Task<IEnumerable<Manafactory>> Gets()
+        {
+            return await manafactoryRepository.Gets();
         }
     }
 }
