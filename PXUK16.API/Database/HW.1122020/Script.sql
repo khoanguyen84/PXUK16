@@ -1,6 +1,6 @@
 ﻿USE [PXUK16DB]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UpdateManufactory]    Script Date: 11/30/2020 4:20:29 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_UpdateManufactory]    Script Date: 11/30/2020 7:28:20 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8,11 +8,11 @@ GO
 -- =============================================
 -- Author:		Hoang Nam
 -- Create date: 30/11/2020
--- Description:	Update Manufactory
+-- Description:	Update manufactory
 -- =============================================
 CREATE PROCEDURE sp_UpdateManufactory
 	@ManufactoryId		INT,
-	@Name	NVARCHAR(500)
+	@ManufactoryName	NVARCHAR(50)
 AS
 BEGIN
 	DECLARE @Message	NVARCHAR(200) = 'Something went wrong, please contact administrator.'
@@ -26,7 +26,7 @@ BEGIN
 		END
 		ELSE
 		BEGIN
-			IF(ISNULL(@Name, '') = '')
+			IF(ISNULL(@ManufactoryName, '') = '')
 			BEGIN
 				SET @Message = 'Manufactory Name is required.'
 			END
@@ -38,14 +38,14 @@ BEGIN
 				END
 				ELSE
 				BEGIN
-					IF(EXISTS(SELECT * FROM Manafactory WHERE Name = @Name AND ManufactoryId <> @ManufactoryId))
+					IF(EXISTS(SELECT * FROM Manafactory WHERE Name = @ManufactoryName AND ManufactoryId <> @ManufactoryId))
 					BEGIN
 						SET @Message = 'Manufactory is exists'	
 					END
 					ELSE
 					BEGIN
 						UPDATE Manafactory
-						SET Name = @Name
+						SET Name = @ManufactoryName
 						WHERE ManufactoryId = @ManufactoryId
 
 						SET @Message = 'Manufactory has been updated success'
