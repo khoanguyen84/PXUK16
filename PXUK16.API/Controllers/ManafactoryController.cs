@@ -36,5 +36,11 @@ namespace PXUK16.API.Controllers
         {
             return Ok(await manafactoryService.UpdateManafactory(request));
         }
+        [HttpPost]
+        [Route("/api/manafactory/delete")]
+        public async Task<OkObjectResult> Delete(DeleteManafactoryRequest request)
+        {
+            return Ok(await manafactoryService.DeleteManafactory(request));
+        }
     }
 }

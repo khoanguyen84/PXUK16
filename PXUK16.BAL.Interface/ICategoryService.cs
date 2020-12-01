@@ -12,5 +12,6 @@ namespace PXUK16.BAL.Interface
         Task<CreateCategoryResult> CreateCategory(CreateCategoryRequest request);
 
         Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request);
+        Task<DeleteCategoryResult> DeleteCategory(DeleteCategoryRequest request);
     }
 }

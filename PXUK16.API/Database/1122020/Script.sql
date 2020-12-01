@@ -5,7 +5,7 @@ GO
 
 -- =============================================
 -- Author:		Trung Ho
--- Create date: 30/11/2020
+-- Create date: 1/12/2020
 -- Description:	Update manafactory
 -- =============================================
 CREATE PROCEDURE [dbo].[sp_UpdateManafactory]
