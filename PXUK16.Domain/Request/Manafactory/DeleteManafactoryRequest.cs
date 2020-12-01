@@ -6,6 +6,6 @@ namespace PXUK16.Domain.Request.Manafactory
 {
     public class DeleteManafactoryRequest
     {
-        public string ManufactoryId { get; set; }
+        public int ManufactoryId { get; set; }
     }
 }

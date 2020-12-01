@@ -28,6 +28,24 @@ namespace PXUK16.DAL
                 throw;
             }
         }
+        public async Task<UpdateManafactoryResult> UpdateManafactory(UpdateManafactoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@ManufactoryId", request.ManufactoryId);
+                parameters.Add("@Name", request.Name);
+                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateManafactoryResult>(cnn: connect,
+                                                    sql: "sp_UpdateManufactory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
 
         public async Task<DeleteManafactoryResult> DeleteManafactory(DeleteManafactoryRequest request)
         {
@@ -52,25 +70,6 @@ namespace PXUK16.DAL
             return await SqlMapper.QueryAsync<Manafactory>(cnn: connect, 
                                                 sql: "sp_Manufactories", 
                                                 commandType: CommandType.StoredProcedure);
-        }
-
-        public async Task<UpdateManafactoryResult> UpdateManafactory(UpdateManafactoryRequest request)
-        {
-            try
-            {
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@ManufactoryId", request.ManufactoryId);
-                parameters.Add("@Name", request.Name);
-                return await SqlMapper.QueryFirstOrDefaultAsync<UpdateManafactoryResult>(cnn: connect,
-                                                    sql: "sp_UpdateManufactory",
-                                                    param: parameters,
-                                                    commandType: CommandType.StoredProcedure);
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
         }
     }
 }
