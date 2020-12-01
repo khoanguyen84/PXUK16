@@ -22,12 +22,33 @@ namespace PXUK16.DAL
                                                     param: parameters,
                                                     commandType: CommandType.StoredProcedure);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
             }
         }
+
+        public async Task<DeleteManafactoryResult> DeleteManafactory(DeleteManafactoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@ManufactoryId", request.ManufactoryId);
+
+
+                return await SqlMapper.QueryFirstOrDefaultAsync<DeleteManafactoryResult>(cnn: connect,
+                                                    sql: "sp_DeleteManufactories",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<Manafactory>> Gets()
         {
             return await SqlMapper.QueryAsync<Manafactory>(cnn: connect, 

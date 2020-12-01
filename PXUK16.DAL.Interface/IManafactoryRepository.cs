@@ -14,5 +14,9 @@ namespace PXUK16.DAL.Interface
 
         Task<UpdateManafactoryResult> UpdateManafactory(UpdateManafactoryRequest request);
 
+        Task<DeleteManafactoryResult> DeleteManafactory(DeleteManafactoryRequest request);
+
+
+
     }
 }
