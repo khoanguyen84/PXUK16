@@ -12,5 +12,6 @@ namespace PXUK16.BAL.Interface
         Task<IEnumerable<Manufactory>> Gets();
         Task<CreateManufactoryResult> CreateManufactory(CreateManufactoryRequest request);
         Task<UpdateManufactoryResult> UpdateManufactory(UpdateManufactoryRequest request);
+        Task<object> DeleteManufactory(DeleteManufactoryRequest request);
     }
 }

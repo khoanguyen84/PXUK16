@@ -38,5 +38,12 @@ namespace PXUK16.API.Controllers
         {
             return Ok(await categoryService.UpdateCategory(request));
         }
+
+        [HttpPost]
+        [Route("/api/category/delete")]
+        public async Task<OkObjectResult> Delete(DeleteCategoryRequest request)
+        {
+            return Ok(await categoryService.DeleteCategory(request));
+        }
     }
 }
