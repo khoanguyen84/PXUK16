@@ -32,6 +32,10 @@ namespace PXUK16.BAL
         {
             return await manafactoryRepository.UpdateManafactory(request);
         }
+        public async Task<DeleteManufactoryResult> DeleteManufactory(DeleteManufactoryRequest request)
+        {
+            return await manafactoryRepository.DeleteManufactory(request);
+        }
 
 
     }
