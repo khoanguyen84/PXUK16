@@ -6,8 +6,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:		Minh Hoàng
--- Create date: 27/11/2020
+-- Author:		Quoc Khanh
+-- Create date: 01/12/2020
 -- Description:	Update Manufactory
 -- =============================================
 CREATE PROCEDURE [dbo].[sp_UpdateManufactory]

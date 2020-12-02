@@ -76,12 +76,6 @@ namespace PXUK16.DAL
                 throw;
             }
         }
-        public async Task<IEnumerable<Category>> Gets()
-        {
-
-            return await SqlMapper.QueryAsync<Category>(cnn: connect,
-                                                sql: "sp_GetCategories",
-                                                commandType: CommandType.StoredProcedure);
-        }
+       
     }
 }
