@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using PXUK16.BAL.Interface;
 using PXUK16.DAL.Interface;
 using PXUK16.Domain.Request.Category;
 using PXUK16.Domain.Response.Category;
@@ -65,7 +66,7 @@ namespace PXUK16.DAL
                 parameters.Add("@CategoryId", request.CategoryId);
 
 
-                return await SqlMapper.QueryFirstOrDefaultAsync<DeleteCategoryResult>(cnn: connect,
+                return await SqlMapper.QueryFirstOrDefaultAsync<BAL.Interface.DeleteCategoryResult>(cnn: connect,
                                                     sql: "sp_DeleteCategory",
                                                     param: parameters,
                                                     commandType: CommandType.StoredProcedure);
@@ -76,6 +77,7 @@ namespace PXUK16.DAL
                 throw;
             }
         }
-       
+
+        
     }
 }

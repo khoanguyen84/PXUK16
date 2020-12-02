@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PXUK16.Domain.Response.Category
 {
-    public class DeleteManufactoryRequest
+    public class DeleteCategoryResult
     {
         public int ManufactoryId { get; set; }
     }
