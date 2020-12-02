@@ -32,7 +32,7 @@ namespace PXUK16.API.Controllers
             return Ok(await categoryService.CreateCategory(request));
         }
 
-        [HttpPost]
+        [HttpPatch]
         [Route("/api/category/update")]
         public async Task<OkObjectResult> Update(UpdateCategoryRequest request)
         {
