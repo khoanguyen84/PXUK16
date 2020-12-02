@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:		Minh Hoàng
+-- Author:		Quoc Khanh
 -- Create date: 27/11/2020
 -- Description:	Update category
 -- =============================================

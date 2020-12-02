@@ -5,7 +5,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
--- Author:		Minh Hoang
+-- Author:		Quoc Khanh
 -- Create date: 25/11/2020
 -- Description:	Get Manafactories have not deleted yet
 -- =============================================

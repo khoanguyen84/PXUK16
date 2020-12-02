@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:		Minh Hoang
+-- Author:		Quoc Khanh
 -- Create date: 26/11/2020
 -- Description:	Create new manafactory
 -- =============================================
