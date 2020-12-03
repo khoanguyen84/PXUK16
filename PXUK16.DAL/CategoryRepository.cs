@@ -66,7 +66,7 @@ namespace PXUK16.DAL
                 parameters.Add("@CategoryId", request.CategoryId);
 
 
-                return await SqlMapper.QueryFirstOrDefaultAsync<BAL.Interface.DeleteCategoryResult>(cnn: connect,
+                return await SqlMapper.QueryFirstOrDefaultAsync<DeleteCategoryResult>(cnn: connect,
                                                     sql: "sp_DeleteCategory",
                                                     param: parameters,
                                                     commandType: CommandType.StoredProcedure);

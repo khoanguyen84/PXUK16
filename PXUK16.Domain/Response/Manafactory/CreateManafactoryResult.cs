@@ -6,7 +6,7 @@ namespace PXUK16.Domain.Response.Manafactory
 {
     public class CreateManafactoryResult
     {
-        public int ManafactoryId { get; set; }
+        public int ManufactoryId { get; set; }
         public string Message { get; set; }
     }
 }

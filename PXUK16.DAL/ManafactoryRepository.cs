@@ -56,7 +56,7 @@ namespace PXUK16.DAL
             }
         }
 
-        public async Task<DeleteManufactoryResult> DeleteManufactory(DeleteManufactoryRequest request)
+        public async Task<DeleteManufactoryResult> DeleteManafactory(DeleteManufactoryRequest request)
         {
             try
             {
@@ -76,9 +76,6 @@ namespace PXUK16.DAL
             }
         }
 
-        public Task<DeleteManufactoryResult> CreateManafactory(DeleteManufactoryRequest request)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
