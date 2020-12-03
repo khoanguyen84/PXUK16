@@ -1,6 +1,6 @@
 using System;
 
-namespace PXUK16.WEb.Models
+namespace PXUK16.Web.Models
 {
     public class ErrorViewModel
     {

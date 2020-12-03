@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace PXUK16.WEb
+namespace PXUK16.Web
 {
     public class Program
     {

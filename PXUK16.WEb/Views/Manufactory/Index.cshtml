@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class=" container"></div>
+<div class="text-center">
+    <h1 class="display-4">MANUFACTORY</h1>
+
+</div>
+<div class=" pb-2 ">
+    <nav class="navbar navbar-expand-sm bg-danger navbar-light" id="NavManu">
+        <ul class="navbar-nav">
+        </ul>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-4  pb-2 ">
+        <div class="list-group" id="Manufac">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4 ">
+        <select class="form-group custom-select" id="Selectfac">
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered table-hover" id="Tablefac">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Manufactory Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+@section Scripts{
+    <script src="~/js/Manufactory.js" asp-append-version="true"></script>
+}
