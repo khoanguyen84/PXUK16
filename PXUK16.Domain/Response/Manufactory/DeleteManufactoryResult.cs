@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PXUK16.Domain.Request.Manufactory
+namespace PXUK16.Domain.Response.Manufactory
 {
-    public class UpdateManufactoryRequest
+   public class DeleteManufactoryResult
     {
         public int ManufactoryId { get; set; }
-        public string Name { get; set; }
+        public string Message { get; set; }
     }
 }

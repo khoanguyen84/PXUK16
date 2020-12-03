@@ -28,14 +28,14 @@ namespace PXUK16.DAL
                 throw;
             }
         }
-        
+
         public async Task<UpdateCategoryResult> UpdateCategory(UpdateCategoryRequest request)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@CategoryId", request.CategoryId);
                 parameters.Add("@CategoryName", request.CategoryName);
+                parameters.Add("@CategoryId", request.CategoryId);
                 return await SqlMapper.QueryFirstOrDefaultAsync<UpdateCategoryResult>(cnn: connect,
                                                     sql: "sp_UpdateCategory",
                                                     param: parameters,
@@ -46,7 +46,24 @@ namespace PXUK16.DAL
 
                 throw;
             }
+        }
 
+        public async Task<DeleteCategoryResult> DeleteCategory(DeleteCategoryRequest request)
+        {
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();              
+                parameters.Add("@CategoryId", request.CategoryId);
+                return await SqlMapper.QueryFirstOrDefaultAsync<DeleteCategoryResult>(cnn: connect,
+                                                    sql: "sp_DeleteCategory",
+                                                    param: parameters,
+                                                    commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
         public async Task<IEnumerable<Category>> Gets()
@@ -57,7 +74,5 @@ namespace PXUK16.DAL
                                                 sql: "sp_GetCategories", 
                                                 commandType: CommandType.StoredProcedure);
         }
-
-        
     }
 }

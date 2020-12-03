@@ -4,9 +4,8 @@ using System.Text;
 
 namespace PXUK16.Domain.Request.Manufactory
 {
-    public class UpdateManufactoryRequest
+    public class DeleteManufactoryRequest
     {
         public int ManufactoryId { get; set; }
-        public string Name { get; set; }
     }
 }

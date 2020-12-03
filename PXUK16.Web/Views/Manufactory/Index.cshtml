@@ -1,31 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<hr />
 <nav class="navbar navbar-expand-sm bg-danger navbar-light" id="subNav">
     <ul class="navbar-nav">
     </ul>
 </nav>
+<hr />
 <div class="row">
-    <div class="list-group" id="catetories">
+    <div class="list-group" id="manufactory">
     </div>
 </div>
+<hr />
 <div class="row">
     <div class="col-4">
-        <select class="form-group custom-select" id="cat">
+        <select class="form-group custom-select" id="manu">
         </select>
     </div>
 </div>
+<hr />
 <div class="row">
-    <table class="table table-bordered table-hover" id="tbCat">
+    <table class="table table-bordered table-hover" id="tbManu">
         <thead class="thead-dark">
             <tr>
                 <th>#Id</th>
-                <th>Category name</th>
+                <th> name</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -36,5 +38,5 @@
 
 
 @section Scripts{
-    <script src="~/js/home.js" asp-append-version="true"></script>
+    <script src="~/js/manufactory.js"asp-append-version="true"></script>
 }
