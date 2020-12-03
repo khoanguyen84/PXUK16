@@ -32,7 +32,7 @@ namespace PXUK16.API.Controllers
             return Ok(await manufactoryService.CreateManufactory(request));
         }
 
-        [HttpPost]
+        [HttpPatch]
         [Route("/api/manufactory/update")]
         public async Task<OkObjectResult> Update(UpdateManufactoryRequest request)
         {
