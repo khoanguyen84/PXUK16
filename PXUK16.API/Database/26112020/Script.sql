@@ -2,7 +2,7 @@
 GO
 
 /****** Object:  StoredProcedure [dbo].[sp_Manufactories]    Script Date: 11/25/2020 12:30:46 PM ******/
-DROP PROCEDURE [dbo].[sp_Manufactories]
+DROP PROCEDURE [dbo].[sp_GetManufactories]
 GO
 
 /****** Object:  StoredProcedure [dbo].[sp_Manufactories]    Script Date: 11/25/2020 12:30:46 PM ******/
@@ -17,7 +17,7 @@ GO
 -- Create date: 25/11/2020
 -- Description:	Get manufactories have not deleted yet
 -- =============================================
-CREATE PROCEDURE [dbo].[sp_Manufactories] 
+CREATE PROCEDURE [dbo].[sp_GetManufactories] 
 AS
 BEGIN
 	SELECT [ManufactoryId]

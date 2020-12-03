@@ -6,6 +6,6 @@ namespace PXUK16.Domain.Request.Category
 {
     public class CreateCategoryRequest
     {
-        public string CategoryName { get; set; }
+        public string  CategoryName { get; set; }
     }
 }

@@ -1,6 +1,6 @@
-﻿var home = {} || home;
+﻿var Category = {} || Category;
 
-home.showCategory = function () {
+Category.showCategory = function () {
     $.ajax({
         url: 'https://localhost:44398/api/category/gets',
         method: 'GET',
@@ -15,7 +15,7 @@ home.showCategory = function () {
 }
 
 
-home.initCategory = function () {
+Category.initCategory = function () {
     $.ajax({
         url: 'https://localhost:44398/api/category/gets',
         method: 'GET',
@@ -29,7 +29,7 @@ home.initCategory = function () {
     });
 }
 
-home.tbCategory = function () {
+Category.tbCategory = function () {
     $.ajax({
         url: 'https://localhost:44398/api/category/gets',
         method: 'GET',
@@ -47,7 +47,7 @@ home.tbCategory = function () {
     });
 }
 
-home.initNav = function () {
+Category.initNav = function () {
     $.ajax({
         url: 'https://localhost:44398/api/category/gets',
         method: 'GET',
@@ -63,13 +63,13 @@ home.initNav = function () {
     });
 }
 
-home.init = function () {
-    home.showCategory();
-    home.initCategory();
-    home.tbCategory();
-    home.initNav();
+Category.init = function () {
+    Category.showCategory();
+    Category.initCategory();
+    Category.tbCategory();
+    Category.initNav();
 }
 
 $(document).ready(function () {
-    home.init();
+    Category.init();
 });

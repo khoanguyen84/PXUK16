@@ -1,6 +1,6 @@
 ﻿USE [PXUK16DB]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_CreateManufactory]    Script Date: 11/26/2020 6:08:08 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_CreateManufactory]    Script Date: 12/3/2020 4:45:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10,7 +10,7 @@ GO
 -- Create date: 26/11/2020
 -- Description:	Create new Manufactory
 -- =============================================
-CREATE PROCEDURE [dbo].[sp_CreateManufactory]
+ALTER PROCEDURE [dbo].[sp_CreateManufactory]
 	@Name NVARCHAR(50)
 AS
 BEGIN
@@ -24,13 +24,13 @@ BEGIN
 		END
 		ELSE
 		BEGIN
-			IF(EXISTS(SELECT * FROM Manufactory WHERE Name = @Name))
+			IF(EXISTS(SELECT * FROM Manafactory WHERE Name = @Name))
 			BEGIN
 				SET @Message = 'Category name is exists.'
 			END
 			ELSE
 			BEGIN
-				INSERT INTO [dbo].[Manufactory]
+				INSERT INTO [dbo].[Manafactory]
 					   ([Name]
 					   ,[IsDeleted])
 				 VALUES
@@ -47,4 +47,3 @@ BEGIN
 		SELECT @ManufactoryId AS CategoryId, @Message AS [Message]
 	END CATCH
 END
-GO
