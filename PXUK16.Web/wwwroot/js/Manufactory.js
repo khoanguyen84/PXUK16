@@ -1,8 +1,8 @@
-﻿var manufactory = {} || manufactory;
+﻿var Manufactory = {} || Manufactory;
 
-manufactory.showManufactory = function () {
+Manufactory.showManufactory = function () {
     $.ajax({
-        url: 'https://localhost:44398/api/manufactory/gets',
+        url: 'https://localhost:44398/api/manafactory/gets',
         method: 'GET',
         contentType: 'JSON',
         success: function (data) {
@@ -14,9 +14,9 @@ manufactory.showManufactory = function () {
     });
 }
 
-manufactory.initManufactory = function () {
+Manufactory.initManufactory = function () {
     $.ajax({
-        url: 'https://localhost:44398/api/manufactory/gets',
+        url: 'https://localhost:44398/api/manafactory/gets',
         method: 'GET',
         contentType: 'JSON',
         success: function (data) {
@@ -28,9 +28,9 @@ manufactory.initManufactory = function () {
     });
 }
 
-manufactory.tbManufactory = function () {
+Manufactory.tbManufactory = function () {
     $.ajax({
-        url: 'https://localhost:44398/api/manufactory/gets',
+        url: 'https://localhost:44398/api/manafactory/gets',
         method: 'GET',
         contentType: 'JSON',
         success: function (data) {
@@ -46,9 +46,9 @@ manufactory.tbManufactory = function () {
     });
 }
 
-manufactory.initNav = function () {
+Manufactory.initNav = function () {
     $.ajax({
-        url: 'https://localhost:44398/api/manufactory/gets',
+        url: 'https://localhost:44398/api/manafactory/gets',
         method: 'GET',
         contentType: 'JSON',
         success: function (data) {
@@ -65,16 +65,16 @@ manufactory.initNav = function () {
 
 
 
-manufactory.init = function () {
-    manufactory.showManufactory();
-    manufactory.initManufactory();
-    manufactory.tbManufactory();
-    manufactory.initNav();
+Manufactory.init = function () {
+    Manufactory.showManufactory();
+    Manufactory.initManufactory();
+    Manufactory.tbManufactory();
+    Manufactory.initNav();
 
 
 }
 
 $(document).ready(function () {
-    manufactory.init();
+    Manufactory.init();
 
 });
