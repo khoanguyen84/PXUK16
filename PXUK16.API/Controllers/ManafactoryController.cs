@@ -30,13 +30,13 @@ namespace PXUK16.API.Controllers
         {
             return Ok(await manafactoryService.CreateManafactory(request));
         }
-        [HttpPost]
+        [HttpPut]
         [Route("/api/manafactory/update")]
         public async Task<OkObjectResult> Update(UpdateManafactoryRequest request)
         {
             return Ok(await manafactoryService.UpdateManafactory(request));
         }
-        [HttpPost]
+        [HttpDelete]
         [Route("/api/manafactory/delete")]
         public async Task<OkObjectResult> Delete(DeleteManafactoryRequest request)
         {
