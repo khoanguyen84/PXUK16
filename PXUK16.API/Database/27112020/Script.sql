@@ -3,7 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:		Tuan Anh
+-- Author:		Khoa Nguyễn
 -- Create date: 27/11/2020
 -- Description:	Update category
 -- =============================================
