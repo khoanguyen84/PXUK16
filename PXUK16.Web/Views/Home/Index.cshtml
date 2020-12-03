@@ -6,3 +6,84 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<nav class="navbar navbar-expand-sm bg-danger navbar-light" id="subNav">
+    <ul class="navbar-nav">
+    </ul>
+</nav>
+<br>
+<div class="row">
+    <div class="list-group" id="catetories">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-4">
+        <select class="form-group custom-select" id="cat">
+        </select>
+    </div>
+</div>
+<br>
+<div class="row">
+    <table class="table table-bordered table-hover" id="tbCat">
+        <thead class="thead-dark">
+            <tr>
+                <th>#Id</th>
+                <th>Category name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+
+@*hiển thị manufactory*@
+
+<h2>Hiển thị Manufactory</h2>
+<br>
+<nav class="navbar navbar-expand-sm bg-danger navbar-light" id="subNavManu">
+    <ul class="navbar-nav">
+    </ul>
+</nav>
+<br>
+<div class="row">
+    <div class="list-group" id="Manufactories">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-4">
+        <select class="form-group custom-select" id="cat1">
+        </select>
+    </div>
+</div>
+<br>
+<div class="row">
+    <table class="table table-bordered table-hover" id="tbCat1">
+        <thead class="thead-dark">
+            <tr>
+                <th>#Id</th>
+                <th>Manufactory name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+@section Scripts{
+    <script src="~/js/home.js" asp-append-version="true"></script>
+    <script src="~/js/Manufactory.js" asp-append-version="true"></script>
+    <link href="~/css/home.css" rel="stylesheet" />
+    <link href="~/css/Manufactory.css" rel="stylesheet" />
+
+}
