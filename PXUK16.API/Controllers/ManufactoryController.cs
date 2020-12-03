@@ -37,7 +37,7 @@ namespace PXUK16.API.Controllers
         {
             return Ok(await manufactoryService.UpdateManufactory(request));
         }
-        [HttpPost]
+        [HttpDelete]
         [Route("/api/manufactory/delete")]
         public async Task<OkObjectResult> Delete(DeleteManufactoryRequest request)
         {
